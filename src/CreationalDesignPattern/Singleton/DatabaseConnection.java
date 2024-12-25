@@ -2,7 +2,7 @@ package CreationalDesignPattern.Singleton;
 
 public class DatabaseConnection {
     //Lazy way
-    //Do not provide Thread Safety
+    //Do not provide Thread Safety (if synchronized is not used)
     private static DatabaseConnection db;
 
     private DatabaseConnection() {
