@@ -8,9 +8,9 @@ public class Main {
 //        DatabaseConnection db1=DatabaseConnection.getDBConnection();
 //        System.out.println(db.hashCode()+" "+db1.hashCode());
 
-        DBConnection db=DBConnection.getDb();
-        DBConnection db2=DBConnection.getDb();
-        System.out.println(db.hashCode()+" "+db2.hashCode());
+//        DBConnection db=DBConnection.getDb();
+//        DBConnection db2=DBConnection.getDb();
+//        System.out.println(db.hashCode()+" "+db2.hashCode());
 
     }
 }

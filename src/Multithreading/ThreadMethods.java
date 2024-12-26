@@ -38,7 +38,5 @@ public class ThreadMethods extends Thread {
 
 //        t3.start();
 
-
-
     }
 }
