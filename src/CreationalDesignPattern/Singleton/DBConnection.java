@@ -8,8 +8,6 @@
 
 package CreationalDesignPattern.Singleton;
 
-import java.io.Serializable;
-
 // 2. Serialization
 //public class DBConnection implements Serializable {
 
