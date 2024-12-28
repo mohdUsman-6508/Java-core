@@ -35,10 +35,14 @@ public class MoreExampleES {
 
         List<Callable<Integer>> list = Arrays.asList(c1, c2, c3);
 //        exe.invokeAll(list);
-        try{
+
+        int completedTask=exe.invokeAny(list);
+        System.out.println("task "+completedTask);
+        try {
             List<Future<Integer>> futures = exe.invokeAll(list, 1000, TimeUnit.MILLISECONDS);
             for (Future<Integer> f : futures) System.out.println(f.get());
-        }catch(CancellationException e){}
+        } catch (CancellationException e) {
+        }
 
         exe.shutdown();
 
