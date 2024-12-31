@@ -1,18 +1,31 @@
 package CreationalDesignPattern.PrototypeDP;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Shape implements Cloneable {
 
     private String color;
     private double x, y;
 
-    static{
-        try {
-            System.out.println("One time expesive operation...");
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    private List<String> type = new ArrayList<>();
+
+    public List<String> getType() {
+        return type;
     }
+
+    public void setType(List<String> type) {
+        this.type = type;
+    }
+
+//    static {
+//        try {
+//            System.out.println("One time expesive operation...");
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public String getColor() {
         return color;
@@ -56,6 +69,26 @@ public abstract class Shape implements Cloneable {
     public abstract double getArea();
 
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+//        return super.clone();
+
+        //deep cloning
+        Shape shape = new Shape() {
+            @Override
+            public double getArea() {
+                return 0;
+            }
+        };
+
+        shape.setX(this.x);
+        shape.setY(this.y);
+        shape.setColor(this.getColor());
+
+        for (String t : this.getType()) {
+            shape.getType().add(t);
+        }
+
+
+        return shape;
+
     }
 }
